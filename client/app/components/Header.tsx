@@ -55,7 +55,7 @@ const Header: FC<Props> = ({ activeItem, setOpen,route,open,setRoute, }) => {
                         <div>
                             <Link href={"/"}
                                 className={`text-[25px] font-Poppins font-[500] text-black dark:text-white`}>
-                                CodeGuru   test commit
+                                CodeGuru
                             </Link>
                         </div>
                         <div className="flex items-center">
