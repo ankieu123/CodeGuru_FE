@@ -21,6 +21,13 @@ input::-webkit-inner-spin-button{
   -webkit-appearance: none;
   margin: 0 ;
 }
+input {
+  width: 100%; /* Chiều rộng đầy đủ */
+  padding: 10px; /* Khoảng cách bên trong */
+  border: 1px solid #ccc; /* Viền */
+  border-radius: 4px; /* Bo góc */
+  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+}
 
 body {
   color: rgb(var(--foreground-rgb));

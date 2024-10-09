@@ -28,18 +28,19 @@ const SignUp: FC<Props> = ({ setRoute }) => {
     });
     const { errors, touched, values, handleChange, handleSubmit } = formik;
     return (
-        <div className='w-full'>
+        <div className='w-full mb-6'>
             <h1 className={`${style.title}`}>
                 Đăng ký vào CodeGuru
             </h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                 <label
-                    className={`text-[16px] font-Poppins text-black dark:text-white"`}
+                    className={`text-[16px] font-Poppins text-black dark:text-white`}
                     htmlFor="email"
                 >
                     Nhập tên của bạn
                 </label>
+                <br/>
                 <input
                     type="name"
                     name=""
@@ -47,19 +48,23 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     onChange={handleChange}
                     id="name"
                     placeholder="yourname"
-                    className={`${errors.name && touched.name && "border-red-500"
-                        }${style.input}`}
+                    className={`${errors.name && touched.name && "border-red-500"} 
+                                w-full text-black dark:text-white bg-transparent border 
+                                rounded-h-[40px] px-2 outline-none mt-[10px] font-Poppins`}
                 />
                 {errors.name && touched.name && (
                     <span className="text-red-500 pt-2-block">{errors.email}</span>
                 )}
                 </div>
+
+
                 <label
-                    className={`${style.label}`}
+                    className={`text-[16px] font-Poppins text-black dark:text-white`}
                     htmlFor="email"
                 >
                     Nhập email
                 </label>
+                <br/>
                 <input
                     type="email"
                     name=""
@@ -67,16 +72,21 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     onChange={handleChange}
                     id="email"
                     placeholder="example@gmail.com"
-                    className={`${errors.email && touched.email && "border-red-500"
-                        }${style.input}`}
+                    className={`${errors.email && touched.email && "border-red-500"} 
+                                w-full text-black dark:text-white bg-transparent border 
+                                rounded-h-[40px] px-2 outline-none mt-[10px] font-Poppins`}
+
                 />
                 {errors.email && touched.email && (
                     <span className="text-red-500 pt-2-block">{errors.email}</span>
                 )}
+                
+                
                 <div className="w-full mt-5 relative mb-1">
-                    <label className={`${style.label}`} htmlFor="email">
+                    <label className={`text-[16px] font-Poppins text-black dark:text-white`} htmlFor="email">
                         Nhập mật khẩu
                     </label>
+                    <br/>
                     <input
                         type={!show ? "password" : "text"}
                         name="password"
@@ -84,8 +94,9 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                         onChange={handleChange}
                         id="password"
                         placeholder="password"
-                        className={`${errors.password && touched.password && "border-red-500"
-                            }${style.input}`}
+                        className={`${errors.password && touched.password && "border-red-500"} 
+                                w-full text-black dark:text-white bg-transparent border 
+                                rounded-h-[40px] px-2 outline-none mt-[10px] font-Poppins`}
                     />
                     {!show ? (
                         <AiOutlineEyeInvisible
@@ -94,10 +105,10 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                             onClick={() => setShow(true)}
                         />
                     ) : (
-                        <AiOutlineEyeInvisible
+                        <AiOutlineEye
                             className="absolute bottom-3 right-2 z-1 cursor-pointer"
                             size={20}
-                            onClick={() => setShow(true)}
+                            onClick={() => setShow(false)}
                         />
                     )}
                     
@@ -119,7 +130,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                 </h5>
                 <div className="flex items-center justify-center my-3">
                     <FcGoogle size={30} className="cursor-pointer mr-2" />
-                    <AiFillGithub size={30} className="cursor-pointer ml-2" />
+                    <AiFillGithub size={30} className="cursor-pointer ml-2 " />
                 </div>
                 <h5 className="text-center pt-4 font-Poppins text-[14px]">
                     Bạn đã có tài khoản?{" "}

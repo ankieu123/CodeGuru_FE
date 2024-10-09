@@ -36,6 +36,7 @@ const Login: FC<Props> = ({ setRoute }) => {
                 >
                     Nhập email
                 </label>
+                <br/>
                 <input
                     type="email"
                     name=""
@@ -44,7 +45,8 @@ const Login: FC<Props> = ({ setRoute }) => {
                     id="email"
                     placeholder="example@gmail.com"
                     className={`${errors.email && touched.email && "border-red-500"
-                        }${style.input}`}
+                        }w-full text-black dark:text-white bg-transparent border 
+                                rounded-h-[40px] px-2 outline-none mt-[10px] font-Poppins`}
                 />
                 {errors.email && touched.email && (
                     <span className="text-red-500 pt-2-block">{errors.email}</span>
@@ -53,6 +55,7 @@ const Login: FC<Props> = ({ setRoute }) => {
                     <label className={`${style.label}`} htmlFor="email">
                         Nhập mật khẩu
                     </label>
+                    <br/>
                     <input
                         type={!show ? "password" : "text"}
                         name="password"
@@ -61,7 +64,8 @@ const Login: FC<Props> = ({ setRoute }) => {
                         id="password"
                         placeholder="password!@%"
                         className={`${errors.password && touched.password && "border-red-500"
-                            }${style.input}`}
+                            }w-full text-black dark:text-white bg-transparent border 
+                                rounded-h-[40px] px-2 outline-none mt-[10px] font-Poppins`}
                     />
                     {!show ? (
                         <AiOutlineEyeInvisible
@@ -70,10 +74,10 @@ const Login: FC<Props> = ({ setRoute }) => {
                             onClick={() => setShow(true)}
                         />
                     ) : (
-                        <AiOutlineEyeInvisible
+                        <AiOutlineEye
                             className="absolute bottom-3 right-2 z-1 cursor-pointer"
                             size={20}
-                            onClick={() => setShow(true)}
+                            onClick={() => setShow(false)}
                         />
                     )}
                     {errors.password && touched.password && (
@@ -96,7 +100,7 @@ const Login: FC<Props> = ({ setRoute }) => {
                     <FcGoogle size={30} className="cursor-pointer mr-2" />
                     <AiFillGithub size={30} className="cursor-pointer ml-2" />
                 </div>
-                <h5 className="text-center pt-4 font-Poppins text-[14px]">
+                <h5 className="text-center pt-4 font-Poppins text-[14px]  text-black dark:text-white">
                     Bạn chưa có tài khoản?{" "}
                     <span
                         className="text-[#2190ff] pl-1 cursor-pointer"
