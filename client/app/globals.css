@@ -31,6 +31,7 @@ input {
 
 body {
   color: rgb(var(--foreground-rgb));
+  overflow: hidden;
 }
 
 .hero_animation {
