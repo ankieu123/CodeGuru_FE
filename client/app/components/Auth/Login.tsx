@@ -88,7 +88,7 @@ const Login: FC<Props> = ({ setRoute }) => {
                     <input
                         type="submit"
                         value="Login"
-                        className={`flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold`}
+                        className={`flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold text-white`}
                     />
                 </div>
                 <br/>

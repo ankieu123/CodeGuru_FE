@@ -120,7 +120,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     <input
                         type="submit"
                         value="Đăng ký"
-                        className={`flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold`}
+                        className={`flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold text-white`}
                     />
                 </div>
                 <br/>
@@ -132,11 +132,11 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     <FcGoogle size={30} className="cursor-pointer mr-2" />
                     <AiFillGithub size={30} className="cursor-pointer ml-2 " />
                 </div>
-                <h5 className="text-center pt-4 font-Poppins text-[14px]">
+                <h5 className="text-center pt-4 font-Poppins text-[14px] text-black dark:text-white">
                     Bạn đã có tài khoản?{" "}
                     <span
                         className="text-[#2190ff] pl-1 cursor-pointer"
-                        onClick={() => setRoute("Sign-Up")}
+                        onClick={() => setRoute("Login")}
                     >
                         Đăng nhập
 
