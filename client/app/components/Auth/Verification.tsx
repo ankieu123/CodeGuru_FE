@@ -42,7 +42,7 @@ const Verification: FC<Props> = ({ setRoute }) => {
     return (
         <div>
             <h1 className={`${style.title}`}>
-                Verify Your Account
+                Xác thực tài khoản
             </h1>
             <br />
             <div className="w-full flex items-center justify-center mt-2">
@@ -59,8 +59,8 @@ const Verification: FC<Props> = ({ setRoute }) => {
                         key={key}
                         ref={inputRefs[index]}
                         className={`w-[65px] h-[65px] bg-transparent border-[3px] rounded-[10px] flex items-center text-black dark:text-white justify-center text-[18px] font-Poppins outline-none text-center ${invalidError
-                                ? "shake border-red-500"
-                                : "dark:border-white border-[#000004a]"
+                            ? "shake border-red-500"
+                            : "dark:border-white border-[#000004a]"
                             }`}
                         placeholder=''
                         maxLength={1}
@@ -74,16 +74,16 @@ const Verification: FC<Props> = ({ setRoute }) => {
             <div className="w-full flex justify-center">
                 <button className={`flex flex-row justify-center items-center py-3 px-6 rounded-full cursor-pointer bg-[#2190ff] min-h-[45px] w-full text-[16px] font-Poppins font-semibold`}
                     onClick={verifictionHandler}>
-                    Verify OTP
+                    Xác thực OTP
                 </button>
             </div>
             <br />
             <h5 className="text-center pt-4 font-Poppins text-[14px] text-black dark:text-white">
-                Go back to sign in?{" "}
+                Trở lại đăng ký?{" "}
                 <span className="text-[#2190ff] pl-1 cursor-pointer"
-                    onClick={() => setRoute("Login")}
+                    onClick={() => setRoute("Sign-Up")}
                 >
-                    Sign in
+                    Đăng ký
                 </span>
 
             </h5>
