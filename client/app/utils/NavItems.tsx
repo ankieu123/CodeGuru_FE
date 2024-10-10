@@ -4,19 +4,19 @@ import React from 'react'
 
 export const navItemsData = [
     {
-        name: 'Home',
+        name: 'Trang chủ',
         url: "/",
     },
     {
-        name: "Courses",
+        name: "Khóa học",
         url: "/courses",
     },
     {
-        name: "About",
+        name: "Về chúng tôi",
         url: "/about",
     },
     {
-        name: "Policy",
+        name: "Chính sách",
         url: "/policy",
     },
     {
