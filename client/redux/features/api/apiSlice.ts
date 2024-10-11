@@ -1,12 +1,11 @@
-import{createApi,fetchBaseQuery} from "@reduxjs/toolkit/query/react";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const apiSlice = createApi({
-    reducerPath:"api",
+    reducerPath: "api",
     baseQuery: fetchBaseQuery({
-        baseUrl:process.env.NEXT_PUBLIC_SEVER_URI,
+        baseUrl: process.env.NEXT_PUBLIC_SEVER_URI,
     }),
-    endpoints:(builder)=> ({}),
-});
+    endpoints: (builder) => ({}),
+})
 
-
-export const {} = apiSlice;
+export const { } = apiSlice;
