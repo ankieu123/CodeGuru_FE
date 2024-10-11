@@ -16,7 +16,6 @@ Một trang web cung cấp khóa học được xây dụng bởi nhóm 10
   + [![Node.js][Node.js]][Node.js-url]
   + [![Mongodb][MongoDB]][MongoDB-url]
   + [![Express.js][Express.js]][Express.js-url]
-  + [![Socket.io][Socket.io]][Socket.io-url]
 
 
 <!-- CONTACT -->
@@ -59,6 +58,3 @@ Một trang web cung cấp khóa học được xây dụng bởi nhóm 10
 
 [Express.js]: https://img.shields.io/badge/Express.js-000000?logo=express&logoColor=fff&style=flat
 [Express.js-url]: https://expressjs.com/
-
-[Socket.io]: https://img.shields.io/badge/Socket.io-4.1.3-010101??style=flat-square&logo=Socket.io&logoColor=white
-[Socket.io-url]: https://socket.io/
