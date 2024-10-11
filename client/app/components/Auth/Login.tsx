@@ -29,11 +29,11 @@ const Login: FC<Props> = ({ setRoute }) => {
 
     return (
         <div className='w-full flex flex-col items-center bg-slate-600 p-6 rounded-lg shadow-lg'>
-            <h1 className={`${style.title} text-2xl font-semibold mb-6`}>
+            <h1 className={`${style.title} text-2xl font-semibold mb-6 text-white`}>
                 Đăng nhập vào CodeGuru
             </h1>
             <form onSubmit={handleSubmit} className="w-full">
-                <label className={`${style.label}`} htmlFor="email">
+                <label className={`${style.label} text-white`} htmlFor="email">
                     Nhập email
                 </label>
                 <br />
@@ -53,7 +53,7 @@ const Login: FC<Props> = ({ setRoute }) => {
                     <span className="text-red-500 pt-2 block">{errors.email}</span>
                 )}
                 <div className="w-full mt-4 relative mb-4">
-                    <label className={`${style.label}`} htmlFor="password">
+                    <label className={`${style.label} text-white`} htmlFor="password">
                         Nhập mật khẩu
                     </label>
                     <br />
@@ -96,14 +96,14 @@ const Login: FC<Props> = ({ setRoute }) => {
                     />
                 </div>
                 <br />
-                <h5 className="text-center pt-4 font-Poppins text-[14px] text-black dark:text-white">
+                <h5 className="text-center pt-4 font-Poppins text-[14px] text-white dark:text-white">
                     Hoặc đăng nhập bằng
                 </h5>
                 <div className="flex items-center justify-center my-3 space-x-4">
                     <FcGoogle size={30} className="cursor-pointer" />
                     <AiFillGithub size={30} className="cursor-pointer" />
                 </div>
-                <h5 className="text-center pt-4 font-Poppins text-[14px] text-black dark:text-white">
+                <h5 className="text-center pt-4 font-Poppins text-[14px] text-white dark:text-white">
                     Bạn chưa có tài khoản?{" "}
                     <span
                         className="text-[#2190ff] pl-1 cursor-pointer"

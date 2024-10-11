@@ -51,12 +51,12 @@ const SignUp: FC<Props> = ({ setRoute }) => {
 
     return (
         <div className="w-full mb-6 p-5 bg-slate-600 shadow-md rounded-lg">
-            <h1 className={`${style.title} text-2xl font-bold text-center mb-6`}>
+            <h1 className={`${style.title} text-2xl font-bold text-center mb-6 text-white`}>
                 Đăng ký vào CodeGuru
             </h1>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label className={`text-[16px] font-Poppins text-black dark:text-white`} htmlFor="name">
+                    <label className={`text-[16px] font-Poppins text-white dark:text-white`} htmlFor="name">
                         Nhập tên của bạn
                     </label>
                     <input
@@ -76,7 +76,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                 </div>
 
                 <div>
-                    <label className={`text-[16px] font-Poppins text-black dark:text-white`} htmlFor="email">
+                    <label className={`text-[16px] font-Poppins text-white dark:text-white`} htmlFor="email">
                         Nhập email
                     </label>
                     <input
@@ -96,7 +96,7 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                 </div>
 
                 <div className="relative">
-                    <label className={`text-[16px] font-Poppins text-black dark:text-white`} htmlFor="password">
+                    <label className={`text-[16px] font-Poppins text-white dark:text-white`} htmlFor="password">
                         Nhập mật khẩu
                     </label>
                     <input
@@ -138,14 +138,14 @@ const SignUp: FC<Props> = ({ setRoute }) => {
                     />
                 </div>
 
-                <h5 className="text-center pt-4 font-Poppins text-[14px] text-black dark:text-white">
+                <h5 className="text-center pt-4 font-Poppins text-[14px] text-white dark:text-white">
                     Hoặc đăng nhập bằng
                 </h5>
                 <div className="flex items-center justify-center my-3 space-x-4">
                     <FcGoogle size={30} className="cursor-pointer" />
                     <AiFillGithub size={30} className="cursor-pointer" />
                 </div>
-                <h5 className="text-center pt-4 font-Poppins text-[14px]">
+                <h5 className="text-center pt-4 font-Poppins text-[14px]  text-white dark:text-white">
                     Bạn đã có tài khoản?{" "}
                     <span
                         className="text-[#2190ff] pl-1 cursor-pointer"
