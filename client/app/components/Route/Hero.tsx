@@ -12,32 +12,32 @@ const Hero: FC<Props> = (props) => {
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-between pt-[70px] lg:pt-0 z-10 relative">
                     {/* Bên trái: Hình ảnh */}
                     <div className="relative w-full min-h-screen lg:w-[40%] flex items-center justify-start">
-                        <div className="absolute -top-[10] -left-20 w-full h-3/4 rounded-full bg-[#39c1f3] z-0 overflow-hidden"></div>
+                        <div className="absolute -top-[10] right-20 w-4/5 h-3/4 rounded-full bg-[#e8f3f8] dark:bg-[#48c2ee] z-0 overflow-hidden"></div>
                         <Image
                             src={require("../../../public/assets/banner-img-1.png")}
                             alt=""
-                            className="object-contain w-[90%] lg:max-w-[90%] xl:max-w-[85%] h-auto z-10 relative"
+                            className="object-contain w-[90%] lg:max-w-[90%] xl:max-w-[85%] h-auto z-10 left-16 relative"
                         />
                     </div>
 
                     {/* Bên phải: Nội dung */}
-                    <div className="flex flex-col items-center text-center lg:text-left lg:w-[60%] mt-[150px] lg:mt-0">
-                        <h2 className="dark:text-[#f7f7f7] text-[#000000c7] text-[30px] px-3 w-full lg:text-[40px] font-[600] font-Josefin py-2 lg:leading-[75px]">
+                    <div className="flex flex-col items-center text-center lg:text-left lg:w-[50%] lg:pr-[40px] lg:mr-[20px] mt-[150px] lg:mt-0">
+                        <h2 className="dark:text-[#f7f7f7] text-[#000000c7] text-[30px] px-3 w-full lg:text-[40px] font-[600] font-Josefin py-2 lg:leading-[60px]">
                             Cải thiện trải nghiệm học tập trực tuyến của bạn tốt hơn ngay lập tức
                         </h2>
-                        <p className="dark:text-[#f7f7f7] text-[#000000ac] font-Josefin font-[600] text-[18px] lg:w-[78%] xl:w-[55%]">
-                            Chúng tôi có hơn 10 khóa học trực tuyến và hơn 1000 sinh viên đăng ký trực tuyến. Tìm các khóa học mong muốn của bạn từ họ.
+                        <p className="dark:text-[#f7f7f7] text-[#000000ac] font-Josefin font-[600] text-[18px] lg:w-[78%] xl:w-[65%] mt-[2%]">
+                            Chúng tôi có hơn 10 khóa học trực tuyến và hơn 1000 học viên đăng ký trực tuyến. Tìm các khóa học mong muốn của bạn từ họ.
                         </p>
                         <div className="w-full h-[50px] bg-transparent relative mt-4">
                             <input
                                 type="search"
                                 placeholder="Tìm khóa học..."
-                                className="bg-transparent border dark:border-none dark:bg-[#575757] rounded-[5px] p-2 w-full h-full outline-none text-[#0000004e] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin"
+                                className="bg-transparent border dark:border-none bg-[#e9e9e9] dark:bg-[#575757] rounded-[5px] p-2 w-full h-full outline-none text-[#070707] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin"
                             />
                             <div className="absolute flex items-center justify-center w-[50px] cursor-pointer h-[50px] right-0 top-0 bg-[#39c1f3] rounded-r-[5px]">
-                            <div className="text-white">
+                                <div className="text-white">
                                     <BiSearch size={30} />
-                        </div>
+                                </div>
                             </div>
                         </div>
                         <div className="flex items-center mt-4">
@@ -57,7 +57,7 @@ const Hero: FC<Props> = (props) => {
                                 className="rounded-full -ml-4"
                             />
                             <p className="font-Josefin dark:text-[#f7f7f7] text-[#000000b3] pl-3 text-[18px] font-[600]">
-                                1000+ đã tin tưởng vào chúng tôi.{" "}
+                                1000+ học viên đã tin tưởng vào CodeGuru.{" "}
                                 <Link
                                     href="/courses"
                                     className="dark:text-[#46e256] text-[crimson]"

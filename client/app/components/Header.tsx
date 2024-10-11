@@ -8,6 +8,9 @@ import CustomModal from "../utils/CustomModal";
 import Login from "../components/Auth/Login"
 import SignUp from "../components/Auth/SignUp";
 import Verification from "../components/Auth/Verification";
+import { useSelector } from 'react-redux';
+import Image from 'next/image';
+import avatar from '../../public/assets/avatar.png';
 
 
 type Props = {
@@ -21,6 +24,7 @@ type Props = {
 const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
     const [active, setActive] = useState(false);
     const [openSidebar, setOpenSidebar] = useState(false);
+    const { user } = useSelector((state: any) => state.auth);
 
     // Xác định giá trị của `isMobile` dựa trên kích thước màn hình
     const isMobile = typeof window !== "undefined" && window.innerWidth < 800;
@@ -70,19 +74,31 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                             <div className='800px:hidden'>
                                 <HiOutlineMenuAlt3
                                     size={25}
-                                    className="cursor-pointer dark: text-white text-black"
+                                    className="cursor-pointer text-black dark:text-white"
                                     onClick={() => setOpenSidebar(true)}
                                 />
                             </div>
-                            <HiOutlineUserCircle
-                                size={25}
-                                fill="black"
-                                className="hidden 800px:block cursor-pointer dark: text-white text-black"
-                                onClick={() => {
-                                    setOpen(true);
-                                    setRoute("Login"); // Reset the route state to "Login"
-                                }}
-                            />
+                            {
+                                user ? (
+                                    <Link href={"/profile"}>
+                                        <Image
+                                            src={user.avatar ? user.avatar : avatar}
+                                            alt=""
+                                            className='w-[32px] h-[32px] rounded-full border-2 border-black dark:border-white cursor-pointer'
+                                        />
+                                    </Link>
+                                ) : (
+                                    <HiOutlineUserCircle
+                                        size={25}
+                                        fill="black"
+                                        className="hidden 800px:block cursor-pointer dark: text-white text-black"
+                                        onClick={() => {
+                                            setOpen(true);
+                                            setRoute("Login"); // Reset the route state to "Login"
+                                        }}
+                                    />
+                                )
+                            }
                         </div>
                     </div>
                 </div>
