@@ -17,16 +17,22 @@
 }
 
 input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button{
+input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0 ;
+  margin: 0;
 }
+
 input {
-  width: 100%; /* Chiều rộng đầy đủ */
-  padding: 10px; /* Khoảng cách bên trong */
-  border: 1px solid #ccc; /* Viền */
-  border-radius: 4px; /* Bo góc */
-  box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước */
+  width: 100%;
+  /* Chiều rộng đầy đủ */
+  padding: 10px;
+  /* Khoảng cách bên trong */
+  border: 1px solid #ccc;
+  /* Viền */
+  border-radius: 4px;
+  /* Bo góc */
+  box-sizing: border-box;
+  /* Đảm bảo padding không làm tăng kích thước */
 }
 
 body {
@@ -66,26 +72,33 @@ body {
     opacity: 0.4;
   }
 }
-@keyframes shake{
-  0%{
+
+@keyframes shake {
+  0% {
     transform: translate(0);
   }
-  20%{
+
+  20% {
     transform: translate(-2px);
   }
-  40%{
+
+  40% {
     transform: translate(2px);
   }
-  60%{
+
+  60% {
     transform: translate(-2px);
   }
-  80%{
+
+  80% {
     transform: translate(2px);
   }
-  100%{
+
+  100% {
     transform: translate(0);
   }
 }
-.shake{
+
+.shake {
   animation: shake 0.5s ease-in-out;
 }

@@ -14,7 +14,7 @@ const Page: FC<Props> = (props) => {
           <div>
                <Heading
                     title='CodeGuru'
-                    description='CodeGuru là trang web cung cấp các khóa học đa dạng '
+                    description='CodeGuru là trang web cung cấp các khóa học đa dạng'
                     keywords='Programming, MERN, Redux, LMS'
                />
                <Header
