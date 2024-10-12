@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 interface IHeadProps {
@@ -10,10 +11,13 @@ const Heading = (props: IHeadProps) => {
     const { title, description, keywords } = props;
     return (
         <>
+            <head>
+                <link rel='icon' href='/assets/favicon.ico' type='image/x-icon' />
+            </head>
             <title>{title}</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta name="viewport" content={description} />
-            <meta name="viewport" content={keywords} />
+            <meta name="description" content={description} />
+            <meta name="keywords" content={keywords} />
         </>
     );
 };
