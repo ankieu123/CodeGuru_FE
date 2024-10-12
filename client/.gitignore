@@ -8,6 +8,8 @@
 
 #ENV
 /client/.env.development
+.env
+.env.*
 
 # testing
 /coverage
