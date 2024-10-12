@@ -7,7 +7,7 @@
 .yarn/install-state.gz
 
 #ENV
-/.env.development
+/client/.env.development
 
 # testing
 /coverage
