@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { FC } from "react";
 import { BiSearch } from "react-icons/bi";
+import { FaHandPointRight } from "react-icons/fa";
 
 type Props = {};
 
@@ -12,11 +13,11 @@ const Hero: FC<Props> = (props) => {
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-between pt-[70px] lg:pt-0 z-10 relative">
                     {/* Bên trái: Hình ảnh */}
                     <div className="relative w-full min-h-screen lg:w-[40%] flex items-center justify-start">
-                        <div className="absolute -top-[10] right-20 w-4/5 h-3/4 rounded-full bg-[#e8f3f8] dark:bg-[#48c2ee] z-0 overflow-hidden"></div>
+                        <div className="absolute -top-[10] right-20 w-5/6 h-3/4 rounded-full bg-[#e8f3f8] dark:bg-[#48c2ee] z-0 overflow-hidden"></div>
                         <Image
                             src={require("../../../public/assets/banner-img-1.png")}
                             alt=""
-                            className="object-contain w-[90%] lg:max-w-[90%] xl:max-w-[85%] h-auto z-10 left-16 relative"
+                            className="object-contain w-[90%] lg:max-w-[90%] xl:max-w-[85%] h-auto z-10 left-12 relative"
                         />
                     </div>
 
@@ -32,7 +33,7 @@ const Hero: FC<Props> = (props) => {
                             <input
                                 type="search"
                                 placeholder="Tìm khóa học..."
-                                className="bg-transparent border dark:border-none bg-[#e9e9e9] dark:bg-[#575757] rounded-[5px] p-2 w-full h-full outline-none text-[#070707] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin"
+                                className="bg-transparent border dark:border-none bg-[#def5fd] dark:bg-[#575757] rounded-[5px] p-2 w-full h-full outline-none text-[#070707] dark:text-[#ffffffe6] text-[20px] font-[500] font-Josefin"
                             />
                             <div className="absolute flex items-center justify-center w-[50px] cursor-pointer h-[50px] right-0 top-0 bg-[#39c1f3] rounded-r-[5px]">
                                 <div className="text-white">
@@ -42,28 +43,31 @@ const Hero: FC<Props> = (props) => {
                         </div>
                         <div className="flex items-center mt-4">
                             <Image
-                                src={require("../../../public/assets/client-1.jpg")}
+                                src={require("../../../public/assets/SonDangF8.png")}
                                 alt=""
-                                className="rounded-full"
+                                className="rounded-full w-12 h-12 border-2 border-black dark:border-white object-cover bg-gray-400"
                             />
                             <Image
-                                src={require("../../../public/assets/client-2.jpg")}
+                                src={require("../../../public/assets/HoiDanIT.jpg")}
                                 alt=""
-                                className="rounded-full -ml-4"
+                                className="rounded-full w-12 h-12 border-2 border-black dark:border-white object-cover bg-gray-400 -ml-4"
                             />
                             <Image
-                                src={require("../../../public/assets/client-3.jpg")}
+                                src={require("../../../public/assets/TrungQuanDev.jpeg")}
                                 alt=""
-                                className="rounded-full -ml-4"
+                                className="rounded-full w-12 h-12 border-2 border-black dark:border-white object-cover bg-gray-400 -ml-4"
                             />
-                            <p className="font-Josefin dark:text-[#f7f7f7] text-[#000000b3] pl-3 text-[18px] font-[600]">
-                                1000+ học viên đã tin tưởng vào CodeGuru.{" "}
-                                <Link
-                                    href="/courses"
-                                    className="dark:text-[#46e256] text-[crimson]"
-                                >
-                                    Xem các khóa học
-                                </Link>
+                            <p className="font-Josefin dark:text-[#f7f7f7] text-[#000000b3] pl-5 text-[18px] font-[600] flex items-center">
+                                1000+ học viên đã tin tưởng vào <span className="dark:text-[#93e9bb] text-[#070707] ml-2">CodeGuru</span>.{" "}
+                                <span className="flex items-center ml-2">
+                                    <FaHandPointRight className="mr-2 mb-1" />{" "}
+                                    <Link
+                                        href="/courses"
+                                        className="dark:text-[#efbfbf] text-blue-500"
+                                    >
+                                        Xem các khóa học
+                                    </Link>
+                                </span>
                             </p>
                         </div>
                     </div>

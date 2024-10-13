@@ -15,8 +15,8 @@ type Props = {
 };
 
 const schema = Yup.object().shape({
-    email: Yup.string().email("Invalid email").required("Please enter your email"),
-    password: Yup.string().required("Please enter your password!").min(6),
+    email: Yup.string().email("Email không đúng định dạng!").required("Vui lòng nhập email của bạn!"),
+    password: Yup.string().required("Vui lòng nhập mật khẩu!").min(6),
 });
 
 const Login: FC<Props> = ({ setRoute, setOpen }) => {
