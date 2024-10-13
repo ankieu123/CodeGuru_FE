@@ -12,8 +12,9 @@ import { useSelector } from 'react-redux';
 import Image from 'next/image';
 import avatar from '../../public/assets/avatar.png';
 import { useSession } from 'next-auth/react';
-import { useSocialAuthMutation } from '@/redux/features/auth/authAPI';
+import { useLogOutQuery, useSocialAuthMutation } from '@/redux/features/auth/authAPI';
 import toast from 'react-hot-toast';
+import { Logout } from '@mui/icons-material';
 
 
 type Props = {
@@ -30,18 +31,27 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
     const { user } = useSelector((state: any) => state.auth);
     const { data } = useSession();
     const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
+    const[logout,setLogout]=useState(false);
+    const{} = useLogOutQuery(undefined,{
+        skip: !logout ? true : false,
+    });
     useEffect(() => {
         if (!user) {
             if (data) {
                 socialAuth({
                     email: data?.user?.email,
                     name: data?.user?.name,
-                    avatar: data?.user?.avatar,
+                    avatar: data?.user?.image,
                 });
             }
         }
-        if (isSuccess) {
+        if (data === null) {
+            if(isSuccess){
             toast.success("Đăng nhập thành công");
+            }
+        }
+        if(data === null){
+            setLogout(true);
         }
     }, [data, user]);
 
@@ -110,7 +120,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                                     <HiOutlineUserCircle
                                         size={25}
                                         fill="black"
-                                        className="hidden 800px:block cursor-pointer dark: text-white text-black"
+                                        className="hidden 800px:block cursor-pointer dark:text-white text-black"
                                         onClick={() => {
                                             setOpen(true);
                                             setRoute("Login"); // Reset the route state to "Login"
