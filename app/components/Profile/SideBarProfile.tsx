@@ -20,8 +20,10 @@ const SideBarProfile: FC<Props> = ({ user, active, avatar, setActive, logOutHand
                 onClick={() => setActive(1)}
             >
                 <Image
-                    src={user.avatar || avatar ? user.avatar || avatar : avatarDefault}
-                    alt=''
+                    src={user.avatar || avatar ? user.avatar.url || avatar : avatarDefault}
+                    alt=""
+                    width={20}
+                    height={20}
                     className="w-[20px] h-[20px] 800px:w-[30px] 800px:h-[30px] cursor-pointer rounded-full"
                 />
                 <h5
@@ -34,7 +36,7 @@ const SideBarProfile: FC<Props> = ({ user, active, avatar, setActive, logOutHand
                 }`}
                 onClick={() => setActive(2)}
             >
-                <RiLockPasswordLine size={20} fill="#fff" />
+                <RiLockPasswordLine size={20} className="text-black dark:text-white" />
                 <h5 className="pl-2 800px:block hidden font-Poppins text-black dark:text-white">
                     Change Password</h5>
             </div>
@@ -44,7 +46,7 @@ const SideBarProfile: FC<Props> = ({ user, active, avatar, setActive, logOutHand
                 }`}
                 onClick={() => setActive(3)}
             >
-                <SiCoursera size={20} fill="#fff" />
+                <SiCoursera size={20} className="text-black dark:text-white" />
                 <h5 className="pl-2 800px:block hidden font-Poppins text-black dark:text-white">
                     Enrolled Courses</h5>
             </div>
@@ -52,7 +54,7 @@ const SideBarProfile: FC<Props> = ({ user, active, avatar, setActive, logOutHand
                 }`}
                 onClick={() => logOutHandler()}
             >
-                <AiOutlineLogout size={20} fill="#fff" />
+                <AiOutlineLogout size={20} className="text-black dark:text-white" />
                 <h5 className="pl-2 800px:block hidden font-Poppins text-black dark:text-white">
                     Log Out</h5>
             </div>

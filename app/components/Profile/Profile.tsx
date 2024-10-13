@@ -1,7 +1,6 @@
 'use client'
 import React, { FC, useState } from 'react'
 import SideBarProfile from './SideBarProfile'
-import { userLoggedOut } from '@/redux/features/auth/authSlice';
 import { useLogOutQuery } from '@/redux/features/auth/authAPI';
 import { signOut } from 'next-auth/react';
 import { redirect } from 'next/navigation';
@@ -46,17 +45,15 @@ const Profile: FC<Props> = ({user}) => {
             avatar={avatar}
             setActive={setActive}
             logOutHandler={logOutHandler}
-            
-            
-            
-            />
-            {
+            />  
+        </div>
+        {
                 active === 1 &&(
-                    <ProfileInfo/>
+                    <div className="w-full h-full bg-transparent mt-[80px]">
+                    <ProfileInfo avatar={avatar} user={user}/>
+                    </div>
                 )
             }
-        </div>
-
     </div>
   )
 }

@@ -54,6 +54,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
             setLogout(true);
         }
     }, [data, user]);
+    
 
     // Xác định giá trị của `isMobile` dựa trên kích thước màn hình
     const isMobile = typeof window !== "undefined" && window.innerWidth < 800;
@@ -111,9 +112,12 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                                 user ? (
                                     <Link href={"/profile"}>
                                         <Image
-                                            src={user.avatar ? user.avatar : avatar}
+                                            src={user.avatar ? user.avatar.url : avatar}
                                             alt=""
+                                            width={30}
+                                            height={30}
                                             className='w-[32px] h-[32px] rounded-full border-2 border-black dark:border-white cursor-pointer'
+                                            style={{border:activeItem === 5 ? "2px solid #37a39a" :"none"}}
                                         />
                                     </Link>
                                 ) : (
