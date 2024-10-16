@@ -124,7 +124,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                                     <HiOutlineUserCircle
                                         size={25}
                                         fill="black"
-                                        className="hidden 800px:block cursor-pointer dark:text-white text-black"
+                                        className="hidden 800px:block cursor-pointer text-white border-black "
                                         onClick={() => {
                                             setOpen(true);
                                             setRoute("Login"); // Reset the route state to "Login"
