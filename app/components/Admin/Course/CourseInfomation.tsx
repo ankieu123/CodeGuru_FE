@@ -35,8 +35,8 @@ const CourseInformation: FC<Props> = ({
               setCourseInfo({ ...courseInfo, name: e.target.value })
             }
             id="name"
-            placeholder="MERN stack LMS platform with Next.js"
-            className="input"
+            placeholder="React Pro Max với Next.js - Làm Chủ Toàn Diện React.JS Hiện Đại"
+            className="input text-black dark:text-white"
           />
         </div>
         <br />
@@ -53,7 +53,7 @@ const CourseInformation: FC<Props> = ({
             onChange={(e) =>
               setCourseInfo({ ...courseInfo, description: e.target.value })
             }
-            className="textarea !h-min !py-2"
+            className="textarea !h-min !py-2  text-black dark:text-white"
           ></textarea>
         </div>
         <button type="submit" className="submit-button">
@@ -74,7 +74,7 @@ const CourseInformation: FC<Props> = ({
               }
               id="price"
               placeholder="1.499.000 VNĐ"
-              className="input"
+              className="input  text-black dark:text-white"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ const CourseInformation: FC<Props> = ({
             }
             id="estimatedprice"
             placeholder="2.499.000 VNĐ"
-            className="input"
+            className="input  text-black dark:text-white"
           />
         </div>
         <br />
@@ -107,7 +107,7 @@ const CourseInformation: FC<Props> = ({
             }
             id="tags"
             placeholder="MERN, Next 13, Tailwind CSS, LMS, Redux"
-            className="input"
+            className="input text-black dark:text-white"
           />
         </div>
         <div className="w-[50%]">
@@ -121,7 +121,7 @@ const CourseInformation: FC<Props> = ({
             }
             id="demoUrl"
             placeholder="eer74fd"
-            className="input"
+            className="input text-black dark:text-white"
           />
         </div>
       </form>

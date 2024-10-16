@@ -2,6 +2,7 @@
 import { ThemeSwitcher } from "@/app/utils/ThemeSwitcher";
 import React, { FC, useState } from "react";
 import { IoMdNotificationsOutline } from "react-icons/io";
+import { TiTick } from "react-icons/ti";
 
 type Props = {};
 
@@ -23,43 +24,42 @@ const DashboardHeader: FC<Props> = () => {
         </span>
       </div>
       {open && (
-        <div className="w-[350px] h-[50vh] dark:bg-[#111C43] bg-white shadow-xl absolute top-16 z-10 rounded">
-          <h5 className="text-center text-[20px] font-Poppins text-black dark:text-white p-3">
-            Notifications
+        <div className="w-[380px] h-[50vh] dark:bg-[#1e293b] bg-white shadow-2xl absolute top-16 right-0 z-10 rounded-md overflow-hidden transition-all duration-300">
+          <h5 className="text-center text-[20px] font-semibold text-black dark:text-white p-3 border-b dark:border-b-[#ffffff47] border-b-[#0000000f]">
+            Thông báo
           </h5>
-          <div className="dark:bg-[#2d3a4ea1] bg-[#00000013] font-Poppins border-b dark:border-b-[#ffffff47] border-b-[#0000000f]">
-            <div className="w-full flex items-center justify-between p-2">
-              <p className="text-black dark:text-white">New Question Received</p>
-              <p className="text-black dark:text-white cursor-pointer">
-                Mark as read
+          <div className="dark:bg-[#2d3a4ea1] bg-[#f0f4f8] font-Poppins border-b dark:border-b-[#ffffff47] border-b-[#0000000f] transition-transform duration-300">
+            <div className="w-full flex items-center justify-between p-3 hover:bg-[#e5e7eb] dark:hover:bg-[#374151] transition-colors rounded-md">
+              <p className="text-black dark:text-yellow-400">Thông báo mới</p>
+              <p className="text-black dark:text-green-500 cursor-pointer flex items-center">
+                Đánh dấu đã đọc <TiTick className="ml-1" />
               </p>
             </div>
-            <p className="px-2 text-black dark:text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt,
-              sequi! Tempore libero omnis et, ea beatae ut, itaque
+            <p className="px-3 text-black dark:text-white text-sm">
+              Đinh Gia Ân vừa tham gia cộng đồng CodeGuru, hãy gửi lời chào đến bạn ấy.
             </p>
-            <p className="p-2 text-black dark:text-white text-[14px]">
-              5 days ago
+            <p className="p-3 text-black dark:text-white text-[14px] opacity-60">
+              1 ngày trước
             </p>
           </div>
 
-          <div className="dark:bg-[#2d3a4ea1] bg-[#00000013] font-Poppins border-b dark:border-b-[#ffffff47] border-b-[#0000000f]">
-            <div className="w-full flex items-center justify-between p-2">
-              <p className="text-black dark:text-white">New Question Received</p>
-              <p className="text-black dark:text-white cursor-pointer">
-                Mark as read
+          <div className="dark:bg-[#2d3a4ea1] bg-[#f0f4f8] font-Poppins border-b dark:border-b-[#ffffff47] border-b-[#0000000f] transition-transform duration-300">
+            <div className="w-full flex items-center justify-between p-3 hover:bg-[#e5e7eb] dark:hover:bg-[#374151] transition-colors rounded-md">
+              <p className="text-black dark:text-yellow-400">Thông báo mới</p>
+              <p className="text-black dark:text-green-500 cursor-pointer flex items-center">
+                Đánh dấu đã đọc <TiTick className="ml-1" />
               </p>
             </div>
-            <p className="px-2 text-black dark:text-white">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt,
-              sequi! Tempore libero omnis et, ea beatae ut, itaque
+            <p className="px-3 text-black dark:text-white text-sm">
+              Đinh Gia Ân vừa bình luận về một khóa học, hãy xem và trả lời.
             </p>
-            <p className="p-2 text-black dark:text-white text-[14px]">
-              5 days ago
+            <p className="p-3 text-black dark:text-white text-[14px] opacity-60">
+              1 ngày trước
             </p>
           </div>
         </div>
       )}
+
     </div>
   );
 };

@@ -8,7 +8,7 @@ Một trang web cung cấp khóa học được xây dụng bởi nhóm 10
 
 ### Xây dựng với
 - Front-end:
-  + [![React][React.js]][React-url] [![Redux][Redux]][Redux-url]
+  + [![Redux][Redux]][Redux-url]
   + [![Next.js][NextJS]][NextJS-url]
   + [![Tailwind][Tailwind]][Tailwind-url]
 
@@ -33,9 +33,6 @@ Một trang web cung cấp khóa học được xây dụng bởi nhóm 10
 [product-screenshot]: images/screenshot.png
 
 <!-- Front-end -->
-
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
 
 [NextJS]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [NextJS-url]: https://nextjs.org/
