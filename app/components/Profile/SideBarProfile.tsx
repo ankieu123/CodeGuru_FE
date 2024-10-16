@@ -5,6 +5,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { SiCoursera } from "react-icons/si";
 import { AiOutlineLogout } from "react-icons/ai";
 import Link from "next/link";
+
 type Props = {
   user: any;
   active: number;
