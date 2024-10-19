@@ -5,6 +5,7 @@ import avatarIcon from "../../../public/assets/avatar.png"
 import { useEditProfileMutation, useUpdateAvatarMutation } from '@/redux/features/user/userApi';
 import { useLoadUserQuery } from '@/redux/features/api/apiSlice';
 import toast from 'react-hot-toast';
+import Loader from '../Loader/Loader';
 
 type Props = {
     avatar: string | null;
@@ -17,6 +18,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
     const [editProfile, { isSuccess: success, error: updateError }] = useEditProfileMutation();
     const [loadUser, setLoadUser] = useState(false);
     const { } = useLoadUserQuery(undefined, { skip: loadUser ? false : true })
+    const [loading, setLoading] = useState(false);
 
 
     const imageHandler = async (e: any) => {
@@ -25,8 +27,9 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
             const fileReader = new FileReader();
             fileReader.onload = async () => {
                 if (fileReader.readyState === 2) {
-                    const result = fileReader.result; // This should be a base64 string
-                    await updateAvatar({ avatar: result }); // Ensure this is the correct structure
+                    const result = fileReader.result;
+                    setLoading(true);
+                    await updateAvatar({ avatar: result });
                 }
             };
             fileReader.readAsDataURL(file);
@@ -36,10 +39,12 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
     useEffect(() => {
         if (isSuccess) {
             toast.success("Cập nhật ảnh đại diện thành công!");
+            setLoading(false);
             setLoadUser(true);
         }
         if (success) {
             toast.success("Cập nhật tên thành công!");
+            setLoading(false);
             setLoadUser(true);
         }
         if (error || updateError) {
@@ -60,14 +65,21 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
         <>
             <div className="w-full flex justify-center">
                 <div className="relative">
-                    <Image
-                        src={user && user.avatar && typeof user.avatar.url === "string" ? user.avatar.url : avatarIcon}
-                        alt="avatar"
-                        width={120}
-                        height={120}
-                        className="w-[120px] h-[120px] cursor-pointer border-[3px] border-[#37a39a] rounded-full"
-                    />
-
+                    {loading
+                        ?
+                        (
+                            <Loader />
+                        )
+                        :
+                        (
+                            <Image
+                                src={user && user.avatar && typeof user.avatar.url === "string" ? user.avatar.url : avatarIcon}
+                                alt="avatar"
+                                width={120}
+                                height={120}
+                                className="w-[120px] h-[120px] cursor-pointer border-[3px] border-[#37a39a] rounded-full"
+                            />
+                        )}
                     <input
                         type="file"
                         name=""
