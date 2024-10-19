@@ -1,30 +1,29 @@
-import { RxAvatar } from "react-icons/rx";
 import { apiSlice } from "../api/apiSlice";
 
 
 export const userApi = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         updateAvatar: builder.mutation({
-            query:(avatar) => ({
-                url:"update-user-avatar",
-                method:"PUT",
-                body:{avatar},
+            query: (avatar) => ({
+                url: "update-user-avatar",
+                method: "PUT",
+                body: { avatar: avatar.avatar },
                 credentials: "include" as const,
-            })
+            }),
         }),
         editProfile: builder.mutation({
-            query:({name}) => ({
-                url:"update-user-info",
-                method:"PUT",
-                body:{name},
+            query: ({ name }) => ({
+                url: "update-user-info",
+                method: "PUT",
+                body: { name },
                 credentials: "include" as const,
             })
         }),
         updatePassword: builder.mutation({
-            query:({oldPassword,newPassword}) => ({
-                url:"update-user-password",
-                method:"PUT",
-                body:{
+            query: ({ oldPassword, newPassword }) => ({
+                url: "update-user-password",
+                method: "PUT",
+                body: {
                     oldPassword,
                     newPassword
                 },
@@ -33,4 +32,4 @@ export const userApi = apiSlice.injectEndpoints({
         }),
     })
 })
-export const {useUpdateAvatarMutation,useEditProfileMutation,useUpdatePasswordMutation}=userApi;
+export const { useUpdateAvatarMutation, useEditProfileMutation, useUpdatePasswordMutation } = userApi;

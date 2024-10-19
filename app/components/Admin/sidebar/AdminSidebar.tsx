@@ -94,7 +94,7 @@ const Sidebar = () => {
           top: 0,
           left: 0,
           height: "100vh",
-          width: isCollapsed ? "0%" : "16%",
+          width: isCollapsed ? "0%" : "19%",
         }}
       >
         <Menu iconShape="square">
@@ -111,18 +111,19 @@ const Sidebar = () => {
                 display="flex"
                 justifyContent="space-between"
                 alignItems="center"
-                ml="15px"
+                ml="7px"
               >
                 <Link href="/">
                   <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black">
                     CodeGuru
                   </h3>
                 </Link>{" "}
+
                 <IconButton
                   onClick={() => setIsCollapsed(!isCollapsed)}
                   className="inline-block"
                 >
-                  <ArrowBackIosIcon className="text-black dark:text-[#ffffffc1]" />
+                  <ArrowBackIosIcon className="text-black dark:text-[#ffffffc1] ml-24" />
                 </IconButton>
               </Box>
             )}
@@ -156,7 +157,7 @@ const Sidebar = () => {
                   sx={{ m: "10px 0 0 0" }}
                   className="! text-[20px] text-black dark:text-[#ffffffc1] capitalize"
                 >
-                  - {user?.role}
+                  - {user?.role} -
                 </Typography>
               </Box>
             </Box>

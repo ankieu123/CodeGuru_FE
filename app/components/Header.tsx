@@ -14,7 +14,6 @@ import avatar from '../../public/assets/avatar.png';
 import { useSession } from 'next-auth/react';
 import { useLogOutQuery, useSocialAuthMutation } from '@/redux/features/auth/authAPI';
 import toast from 'react-hot-toast';
-import { Logout } from '@mui/icons-material';
 
 
 type Props = {
@@ -31,8 +30,8 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
     const { user } = useSelector((state: any) => state.auth);
     const { data } = useSession();
     const [socialAuth, { isSuccess, error }] = useSocialAuthMutation();
-    const[logout,setLogout]=useState(false);
-    const{} = useLogOutQuery(undefined,{
+    const [logout, setLogout] = useState(false);
+    const { } = useLogOutQuery(undefined, {
         skip: !logout ? true : false,
     });
     useEffect(() => {
@@ -46,15 +45,15 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
             }
         }
         if (data === null) {
-            if(isSuccess){
-            toast.success("Đăng nhập thành công");
+            if (isSuccess) {
+                toast.success("Đăng nhập thành công");
             }
         }
-        if(data === null){
+        if (data === null) {
             setLogout(true);
         }
     }, [data, user]);
-    
+
 
     // Xác định giá trị của `isMobile` dựa trên kích thước màn hình
     const isMobile = typeof window !== "undefined" && window.innerWidth < 800;
@@ -117,7 +116,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                                             width={30}
                                             height={30}
                                             className='w-[32px] h-[32px] rounded-full border-2 border-black dark:border-white cursor-pointer'
-                                            style={{border:activeItem === 5 ? "2px solid #37a39a" :"none"}}
+                                            style={{ border: activeItem === 5 ? "2px solid #37a39a" : "none" }}
                                         />
                                     </Link>
                                 ) : (
@@ -147,7 +146,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
                                 <NavItems activeItem={activeItem} isMobile={true} />
                                 <HiOutlineUserCircle
                                     size={25}
-                                    className='cursor-pointer ml-5 my-2 text-black dark:text-white'
+                                    className='cursor-pointer ml-5 my-2 text-black dark:text-white border-white'
                                     onClick={() => {
                                         setOpen(true);
                                         setRoute("Login"); // Reset the route state to "Login"

@@ -30,7 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${poppins.variable} ${josefin.variable}  !bg-white bg-no-repeat dark:bg-gradient-to-b dark:from-gray-900 dark:to-black duration-300 `}
-        >
+      >
         <Providers>
           <SessionProvider>
             <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
@@ -43,13 +43,20 @@ export default function RootLayout({
     </html>
   );
 }
-const Custom: React.FC<{children:React.ReactNode}> = ({children})=> {
-  const {isLoading} = useLoadUserQuery({});
-  return(
+const Custom: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { isLoading } = useLoadUserQuery({});
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);  //khi client-side đã sẵn sàng
+  }, []);
+
+  if (!mounted) return null; //chỉ render sau khi client đã mount
+
+  return (
     <>
-    {
-      isLoading ? <Loader/> : <>{children}</>
-    }
+      {isLoading ? <Loader /> : <>{children}</>}
     </>
-  )
-}
+  );
+};
+
