@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import CourseInfomation from './CourseInfomation';
 import CourseOptions from './CourseOptions';
 import CourseData from './CourseData';
+import CourseContent from './CourseContent';
 
 type Props = {};
 
@@ -26,7 +27,7 @@ const CreateCourse = (props: Props) => {
       videoUrl: '',
       title: '',
       description: '',
-      videoSection: 'Untitled Section',
+      videoSection: 'Phần chưa đặt tên',
       links: [
         {
           title: '',
@@ -38,6 +39,10 @@ const CreateCourse = (props: Props) => {
   ]);
 
   const [courseData, setCourseData] = useState({});
+
+  const handleSubmit = async () => {
+
+  }
 
   return (
     <div className="w-full flex min-h-screen">
@@ -51,7 +56,7 @@ const CreateCourse = (props: Props) => {
           />
         )}
 
-{active === 1 && (
+        {active === 1 && (
           <CourseData
             benefits={benefits}
             setBenefits={setBenefits}
@@ -59,6 +64,16 @@ const CreateCourse = (props: Props) => {
             setPrerequisites={setPrerequisites}
             active={active}
             setActive={setActive}
+          />
+        )}
+
+        {active === 2 && (
+          <CourseContent
+            active={active}
+            setActive={setActive}
+            courseContentData={courseContentData}
+            setCourseContentData={setCourseContentData}
+            handleSubmit={handleSubmit}
           />
         )}
 

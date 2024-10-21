@@ -56,7 +56,7 @@ const Header: FC<Props> = ({ activeItem, setOpen, route, open, setRoute, }) => {
 
 
     // Xác định giá trị của `isMobile` dựa trên kích thước màn hình
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 800;
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 850;
 
     if (typeof window !== "undefined") {
         window.addEventListener("scroll", () => {

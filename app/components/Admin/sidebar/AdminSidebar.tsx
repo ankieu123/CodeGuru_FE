@@ -26,6 +26,7 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { course } from '@/app/styles/course';
 
 interface itemProps {
   title: string;
@@ -33,6 +34,7 @@ interface itemProps {
   icon: JSX.Element;
   selected: string;
   setSelected: any;
+  className: string;
 }
 const Item: FC<itemProps> = ({ title, to, icon, selected, setSelected }) => {
   return (
@@ -65,17 +67,17 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${theme === "dark" ? "#111C43 !important" : "#fff !important"
+          background: `${theme === "dark" ? "#111C43 !important" : "#939393 !important"
             }`,
         },
         "&.pro-icon-wrapper": {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
+          color: "#73c2d6 !important",
         },
         "& .pro-menu-item.active": {
-          color: "#6870fa !important",
+          color: "#04d832 !important",
         },
         "&.pro-inner-item": {
           padding: "5px 35px 5px 20px !important",
@@ -85,7 +87,7 @@ const Sidebar = () => {
           color: `${theme !== "dark" && "#000"}`,
         },
       }}
-      className="bg-white dark:bg-[#111C43]"
+      className="bg-white dark:bg-[#43ffcd]"
     >
       <ProSidebar
         collapsed={isCollapsed}
@@ -114,7 +116,7 @@ const Sidebar = () => {
                 ml="7px"
               >
                 <Link href="/">
-                  <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black">
+                  <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black font-semibold">
                     CodeGuru
                   </h3>
                 </Link>{" "}
@@ -170,6 +172,7 @@ const Sidebar = () => {
               icon={<HomeOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Typography
               variant="h5"
@@ -184,6 +187,7 @@ const Sidebar = () => {
               icon={<GroupsIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Item
@@ -192,6 +196,7 @@ const Sidebar = () => {
               icon={<ReceiptOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Typography
@@ -207,6 +212,7 @@ const Sidebar = () => {
               icon={<VideoCallIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Item
               title="Khóa học trực tiếp"
@@ -214,6 +220,7 @@ const Sidebar = () => {
               icon={<OndemandVideoIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Typography
               variant="h5"
@@ -228,6 +235,7 @@ const Sidebar = () => {
               icon={<WebIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Item
@@ -236,6 +244,7 @@ const Sidebar = () => {
               icon={<QuizIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Item
               title="Các danh mục"
@@ -243,6 +252,7 @@ const Sidebar = () => {
               icon={<WysiwygIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Typography
@@ -258,6 +268,7 @@ const Sidebar = () => {
               icon={<PeopleOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Typography
@@ -273,6 +284,7 @@ const Sidebar = () => {
               icon={<BarChartOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Item
               title="Phân tích hóa đơn"
@@ -287,6 +299,7 @@ const Sidebar = () => {
               icon={<ManageHistoryIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
 
             <Typography
@@ -302,6 +315,7 @@ const Sidebar = () => {
               icon={<SettingsIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <div onClick={logoutHandler}>
               <Item
@@ -310,6 +324,7 @@ const Sidebar = () => {
                 icon={<ExitToAppIcon />}
                 selected={selected}
                 setSelected={setSelected}
+                className={`${course.font}`}
               />
             </div>
           </Box>

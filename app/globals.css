@@ -102,3 +102,21 @@ body {
 .shake {
   animation: shake 0.5s ease-in-out;
 }
+
+
+/* scroll */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fffffff0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0b87a0b0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #32ae7e;
+}

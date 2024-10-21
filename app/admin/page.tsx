@@ -16,11 +16,11 @@ const page = (Props: Props) => {
           description="CodeGuru đây là nền tảng dành cho học sinh tham gia các khóa học, bên cạnh việc học còn được các thầy cô hỗ trợ"
           keywords="Programming, MERN, Redux, Machine Learning"
         />
-        <div className="flex h-[200vh]">
-          <div className="1500px:w-[16%] w-1/5">
+        <div className="flex h-[100vh]">
+          <div className="1500px:w-[15%] w-1/5">
             <AdminSidebar />
           </div>
-          <div className="w- [85%]">
+          <div className="w- [85%] h-full overflow-auto">
             <DashboardHero />
           </div>
         </div>
