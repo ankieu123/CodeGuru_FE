@@ -66,10 +66,6 @@ const CoursePreview: FC<Props> = ({
                         Áp dụng
                     </div>
                 </div>
-                <p className='pb-1 text-white ml-14'>.</p>
-                <p className='pb-1 text-white ml-14'>.</p>
-                <p className='pb-1 text-white ml-14'>.</p>
-                <p className='pb-3 800px:pb-1 text-white ml-14'>. Premium Support</p>
             </div>
             <div className='w-full ml-14'>
                 <div className='w-full 800px:pr-5'>
@@ -84,18 +80,34 @@ const CoursePreview: FC<Props> = ({
                         <h5 className=' text-white'>0 học viên</h5>
                     </div>
                     <br />
+
+                    {/* benefits */}
                     <h1 className='text-[25px] font-Poppins font-[600]  text-white'>
                         Bạn sẽ học được gì từ khóa học này?
                     </h1>
+                    <ul className="list-disc ml-6 dark:text-white text-black">
+                        {courseData?.benefits?.map((item: any, index: number) => (
+                            <li key={index} className="py-2 flex items-center">
+                                <IoCheckmarkDoneCircleOutline size={20} className="mr-2" />
+                                <span>{item.title}</span>
+                            </li>
+                        ))}
+                    </ul>
+                    <br />
+
+                    {/* prerequisites */}
+                    <h1 className='text-[25px] font-Poppins font-[600]  text-white mt-6'>
+                        Bạn cần những gì để có thể học được?
+                    </h1>
+                    <ul className="list-disc ml-6 dark:text-white text-black">
+                        {courseData?.prerequisites?.map((item: any, index: number) => (
+                            <li key={index} className="py-2 flex items-center">
+                                <IoCheckmarkDoneCircleOutline size={20} className="mr-2" />
+                                <span>{item.title}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-                {courseData?.benefits?.map((item: any, index: number) => (
-                    <div className='w-full flex 800px:items-center py-2 dark:text-white text-black' key={index}>
-                        <div className='w-[15px] mr-1'>
-                            <IoCheckmarkDoneCircleOutline size={20} />
-                        </div>
-                        <p className='pl-2'>{item.title}</p>
-                    </div>
-                ))}
                 <br />
 
                 {/* course description */}

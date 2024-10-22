@@ -1,15 +1,32 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CourseInformation from './CourseInformation';
 import CourseOptions from './CourseOptions';
 import CourseData from './CourseData';
 import CourseContent from './CourseContent';
 import CoursePreview from './CoursePreview';
+import { useCreateCourseMutation } from '@/redux/features/course/courseAPI';
+import toast from 'react-hot-toast';
+import { redirect } from 'next/navigation';
+
 
 type Props = {};
 
 const CreateCourse = (props: Props) => {
-  const [active, setActive] = useState(3);
+  const [active, setActive] = useState(0);
+  const [createCourse, { isLoading, isSuccess, error }] = useCreateCourseMutation();
+  useEffect(() => {
+    if (isSuccess) {
+      toast.success("Tạo khóa học thành công");
+      redirect("/admin");
+    }
+    if (error) {
+      if ("data" in error) {
+        const errorMessage = error as any;
+        toast.error(errorMessage.data.message);
+      }
+    }
+  }, [isLoading, isSuccess, error]);
   const [courseInfo, setCourseInfo] = useState({
     name: '',
     description: '',
@@ -73,7 +90,7 @@ const CreateCourse = (props: Props) => {
       demoUrl: courseInfo.demoUrl,
       totalVideos: courseContentData.length,
       benefits: formatBenefits,
-      prerequisites: formatBenefits,
+      prerequisites: formatPrerequisites,
       courseContent: formatCourseContentData,
     };
     setCourseData(data);
@@ -81,7 +98,12 @@ const CreateCourse = (props: Props) => {
   // console.log(courseData); //feature: đổi qua uncontrolled component
 
   const handleCourseCreate = async (e: any) => {
-    const data = courseData;
+
+    await handleSubmit(); // Xử lý dữ liệu trước
+
+    if (!isLoading) {
+      await createCourse(courseData); // Gửi dữ liệu đã được xử lý
+    }
   }
 
   return (

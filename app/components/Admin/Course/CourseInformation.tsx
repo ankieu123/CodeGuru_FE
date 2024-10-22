@@ -22,7 +22,7 @@ const CourseInformation: FC<Props> = ({
     setActive(active + 1);
   };
 
-  const handleFilechange = (e: any) => {
+  const handleFileChange = (e: any) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -174,7 +174,7 @@ const CourseInformation: FC<Props> = ({
                 setCourseInfo({ ...courseInfo, demoUrl: e.target.value })
               }
               id="demoUrl"
-              placeholder="eer74fd"
+              placeholder="8391ad94ab9a19478c7d1f5fbff76999"
               className={style.input}
             />
           </div>
@@ -187,7 +187,7 @@ const CourseInformation: FC<Props> = ({
             accept="image/*"
             id="file"
             className="hidden"
-            onChange={handleFilechange}
+            onChange={handleFileChange}
           />
           <label
             htmlFor="file"
@@ -200,10 +200,10 @@ const CourseInformation: FC<Props> = ({
             {courseInfo.thumbnail ? (
               <Image
                 src={courseInfo.thumbnail}
-                alt=""
-                className="max-w-md object-cover"
-                width={200}
-                height={200}
+                alt="Đang tải ảnh lên..."
+                width={600}
+                height={500}
+                className="object-contain"
               />
             ) : (
               <span className="text-black dark:text-white">
