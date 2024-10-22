@@ -1,14 +1,15 @@
 'use client';
 import React, { useState } from 'react';
-import CourseInfomation from './CourseInfomation';
+import CourseInformation from './CourseInformation';
 import CourseOptions from './CourseOptions';
 import CourseData from './CourseData';
 import CourseContent from './CourseContent';
+import CoursePreview from './CoursePreview';
 
 type Props = {};
 
 const CreateCourse = (props: Props) => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(3);
   const [courseInfo, setCourseInfo] = useState({
     name: '',
     description: '',
@@ -41,14 +42,53 @@ const CreateCourse = (props: Props) => {
   const [courseData, setCourseData] = useState({});
 
   const handleSubmit = async () => {
+    // format benefits
+    const formatBenefits = benefits.map((benefits) => ({ title: benefits.title }));
 
+    // format prerequisites
+    const formatPrerequisites = prerequisites.map((prerequisites) => ({ title: prerequisites.title }));
+
+    // format courseContentData
+    const formatCourseContentData = courseContentData.map((courseContent) => ({
+      videoUrl: courseContent.videoUrl,
+      title: courseContent.title,
+      description: courseContent.description,
+      videoSection: courseContent.videoSection,
+      links: courseContent.links.map((link) => ({
+        title: link.title,
+        url: link.url,
+      })),
+      suggestion: courseContent.suggestion,
+    }));
+
+    //prepare our data object
+    const data = {
+      name: courseInfo.name,
+      description: courseInfo.description,
+      price: courseInfo.price,
+      estimatedPrice: courseInfo.estimatedPrice,
+      tags: courseInfo.tags,
+      thumbnail: courseInfo.thumbnail,
+      level: courseInfo.level,
+      demoUrl: courseInfo.demoUrl,
+      totalVideos: courseContentData.length,
+      benefits: formatBenefits,
+      prerequisites: formatBenefits,
+      courseContent: formatCourseContentData,
+    };
+    setCourseData(data);
+  };
+  // console.log(courseData); //feature: đổi qua uncontrolled component
+
+  const handleCourseCreate = async (e: any) => {
+    const data = courseData;
   }
 
   return (
     <div className="w-full flex min-h-screen">
       <div className="w-[80%]">
         {active === 0 && (
-          <CourseInfomation
+          <CourseInformation
             courseInfo={courseInfo}
             setCourseInfo={setCourseInfo}
             active={active}
@@ -74,6 +114,15 @@ const CreateCourse = (props: Props) => {
             courseContentData={courseContentData}
             setCourseContentData={setCourseContentData}
             handleSubmit={handleSubmit}
+          />
+        )}
+
+        {active === 3 && (
+          <CoursePreview
+            active={active}
+            setActive={setActive}
+            courseData={courseData}
+            handleCourseCreate={handleCourseCreate}
           />
         )}
 
