@@ -108,7 +108,6 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
     footerPaginationRowsPerPage: "Học viên mỗi trang:",
     footerPaginationButton: "Đi",
   };
->>>>>>> b22d0b55909f439d960cfb08cddbdcd60275a158
 
   const rows: any = [];
 
