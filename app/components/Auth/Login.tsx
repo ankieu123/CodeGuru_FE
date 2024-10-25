@@ -30,6 +30,13 @@ const Login: FC<Props> = ({ setRoute, setOpen }) => {
         },
     });
 
+    // add event press key enter
+    const handlePressKey = (event) => {
+        if (event.key === "Enter") {
+            formik.handleSubmit(event);
+        }
+    }
+
     useEffect(() => {
         if (isSuccess) {
             toast.success("Đăng nhập thành công");
@@ -60,6 +67,7 @@ const Login: FC<Props> = ({ setRoute, setOpen }) => {
                     name="email"
                     value={values.email}
                     onChange={handleChange}
+                    onKeyPress={handlePressKey}
                     id="email"
                     placeholder="example@gmail.com"
                     className={`w-full text-black  bg-white border 
@@ -80,6 +88,7 @@ const Login: FC<Props> = ({ setRoute, setOpen }) => {
                         name="password"
                         value={values.password}
                         onChange={handleChange}
+                        onKeyPress={handlePressKey}
                         id="password"
                         placeholder="Mật khẩu của bạn"
                         className={`w-full text-black bg-white border 

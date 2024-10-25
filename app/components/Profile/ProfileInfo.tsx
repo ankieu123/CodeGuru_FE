@@ -86,7 +86,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
                         id="avatar"
                         className="hidden"
                         onChange={imageHandler}
-                        accept="image/png,image/jpg,image/jpeg,image/webp"
+                        accept="image/png,image/jpg,image/jpeg,image/webp/gif"
                     />
                     <label htmlFor="avatar">
                         <div className="w-[30px] bg-slate-900 rounded-full absolute bottom-2 right-2 flex items-center justify-center cursor-pointer">
