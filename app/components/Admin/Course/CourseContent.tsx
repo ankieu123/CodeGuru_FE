@@ -252,7 +252,7 @@ const CourseContent: FC<Props> = ({
                                                         </div>
                                                         <input
                                                             type='text'
-                                                            placeholder='Source code... (Tiêu đề đường dẫn)'
+                                                            placeholder='Tiêu đề của Source Code'
                                                             className={`${style.input}`}
                                                             value={link.title}
                                                             onChange={(e) => {
@@ -263,7 +263,7 @@ const CourseContent: FC<Props> = ({
                                                         />
                                                         <input
                                                             type='url'
-                                                            placeholder='Source code URL... (URL)'
+                                                            placeholder='Source code (URL)'
                                                             className={`${style.input} mt-6`}
                                                             value={link.url}
                                                             onChange={(e) => {
@@ -302,12 +302,12 @@ const CourseContent: FC<Props> = ({
                         </>
                     );
                 })};
-                <br/>
+                <br />
                 <div className='flex items-center text-[20px] dark:text-white text-black cursor-pointer' onClick={() => addNewSection()}>
-                    <AiOutlinePlusCircle className='mr-2'/> Thêm phần mới
+                    <AiOutlinePlusCircle className='mr-2' /> Thêm phần mới
                 </div>
             </form>
-            <br/>
+            <br />
             <div className='w-full flex items-center justify-between'>
                 <div className='w-full 800px:w-[180px] flex items-center justify-center h-[40px] bg-[#37a39a] text-center text-[#fff] round mt-8 cursor-pointer' onClick={() => prevButton()}>
                     Quay lại

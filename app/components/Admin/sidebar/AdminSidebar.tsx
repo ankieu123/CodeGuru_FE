@@ -67,14 +67,14 @@ const Sidebar = () => {
     <Box
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${theme === "dark" ? "#111C43 !important" : "#939393 !important"
+          background: `${theme === "dark" ? "#111C43 !important" : "#8abab6 !important"
             }`,
         },
         "&.pro-icon-wrapper": {
           backgroundColor: "transparent !important",
         },
         "& .pro-inner-item:hover": {
-          color: "#73c2d6 !important",
+          color: `${theme === "dark" ? "#61cc5e !important" : "#cc8041 !important"}`,
         },
         "& .pro-menu-item.active": {
           color: "#04d832 !important",
@@ -84,10 +84,11 @@ const Sidebar = () => {
           opacity: 1,
         },
         "& .pro-menu-item": {
-          color: `${theme !== "dark" && "#000"}`,
+          color: `${theme === "dark" ? "#f2eded !important" : "#ffffff !important"
+            }`,
         },
       }}
-      className="bg-white dark:bg-[#43ffcd]"
+      className="bg-white dark:bg-[#e3ff43]"
     >
       <ProSidebar
         collapsed={isCollapsed}
@@ -115,11 +116,9 @@ const Sidebar = () => {
                 alignItems="center"
                 ml="7px"
               >
-                <Link href="/">
-                  <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black font-semibold">
-                    CodeGuru
-                  </h3>
-                </Link>{" "}
+                <h3 className="text-[25px] font-Poppins uppercase dark:text-white text-black font-semibold">
+                  CodeGuru
+                </h3>
 
                 <IconButton
                   onClick={() => setIsCollapsed(!isCollapsed)}
@@ -177,9 +176,9 @@ const Sidebar = () => {
             <Typography
               variant="h5"
               sx={{ m: "15px 0 5px 25px" }}
-              className="text-[18px]  text-black dark:text-[#ffffffc1] capitalize ! font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
             >
-              {!isCollapsed && "Dữ liệu"}
+              {!isCollapsed && "DỮ LIỆU"}
             </Typography>
             <Item
               title="Người dùng"
@@ -201,10 +200,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h5"
-              className="! text-[18px) text-black dark:text-[#ffffffc1] capitalize ! font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Nội dung"}
+              {!isCollapsed && "NỘI DUNG"}
             </Typography>
             <Item
               title="Tạo khóa học"
@@ -224,10 +223,10 @@ const Sidebar = () => {
             />
             <Typography
               variant="h5"
-              className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Tùy chỉnh"}
+              {!isCollapsed && "TÙY CHỈNH"}
             </Typography>
             <Item
               title="Hero"
@@ -257,10 +256,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h5"
-              className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Điều khiển"}
+              {!isCollapsed && "ĐIỀU KHIỂN"}
             </Typography>
             <Item
               title="Quản lý đội ngũ"
@@ -273,10 +272,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Phân tích"}
+              {!isCollapsed && "PHÂN TÍCH"}
             </Typography>
             <Item
               title="Phân tích khóa học"
@@ -292,6 +291,7 @@ const Sidebar = () => {
               icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
+              className={`${course.font}`}
             />
             <Item
               title="Phân tích người dùng"
@@ -304,10 +304,10 @@ const Sidebar = () => {
 
             <Typography
               variant="h6"
-              className="!text-[18px] text-black dark:text-[#ffffffc1] capitalize !font-[400]"
+              className="text-[15px] text-[#720be0c1] dark:text-[#22f6f9c1] capitalize ! font-[400]"
               sx={{ m: "15px 0 5px 20px" }}
             >
-              {!isCollapsed && "Tiện ích bổ sung"}
+              {!isCollapsed && "LỰA CHỌN KHÁC"}
             </Typography>
             <Item
               title="Cài đặt"

@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, use, useEffect, useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { Box, Button, Modal } from "@mui/material";
 import { AiOutlineDelete, AiOutlineMail } from "react-icons/ai";
 import { useTheme } from "next-themes";
+import { style } from "../../../../app/styles/style"
 import {
   useDeleteUserMutation,
   useGetAllUsersQuery,
@@ -25,13 +26,10 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
   const [role, setRole] = useState("admin");
   const [open, setOpen] = useState(false);
   const [userId, setUserId] = useState("");
-  const [loadUser, setLoadUser] = useState(false);
-  const [updateUserRole, { error: updateError, isSuccess }] =
-    useUpdateUserRoleMutation();
-
+  const [updateUserRole, { error: updateError, isSuccess }] = useUpdateUserRoleMutation();
   const { isLoading, data, error } = useGetAllUsersQuery({});
-  const [deleteUser, { isSuccess: deleteSuccess, error: deleteError }] =
-    useDeleteUserMutation({});
+  const [deleteUser, { isSuccess: deleteSuccess, error: deleteError }] = useDeleteUserMutation({});
+
 
   useEffect(() => {
     if (updateError) {
@@ -44,12 +42,10 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
     if (isSuccess) {
       toast.success("Cập nhật vai trò người dùng thành công!");
       setActive(false);
-      setLoadUser(true);
     }
     if (deleteSuccess) {
       toast.success("Xóa người dùng thành công!");
       setOpen(false);
-      setLoadUser(true);
     }
     if (deleteError) {
       if ("data" in deleteError) {
@@ -63,8 +59,8 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
     { field: "id", headerName: "ID", flex: 0.5 },
     { field: "name", headerName: "Họ và tên", flex: 0.4 },
     { field: "email", headerName: "Email", flex: 0.5 },
-    { field: "role", headerName: "Vai trò", flex: 0.3 },
-    { field: "created_at", headerName: "Ngày tham gia", flex: 0.5 },
+    { field: "role", headerName: "Vai trò", flex: 0.2 },
+    { field: "created_at", headerName: "Ngày tham gia", flex: 0.3 },
     {
       field: " ",
       headerName: "Xóa",
@@ -154,12 +150,18 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
       ) : (
         <Box
           m="20px"
-          sx={{ width: "80%", maxWidth: "1200px", padding: "20px" }}
+          sx={{
+            width: "80%", maxWidth: "1200px", padding: "20px", borderRadius: 0.2, bgcolor: '#6da2f2',
+            '&:hover': {
+              bgcolor: '4f8fef',
+            },
+          }
+          }
         >
           {isTeam && (
             <div className="full justify-end">
               <div
-                className={`flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3] !h-[35px] text-[16px] font-Poppins font-semibold !w-[200px] dark:bg-[#57c7a3] !h-[35px] dark:border  dark:text-[#fff] `}
+                className={`flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3] text-[16px] font-Poppins font-semibold !w-[190px] dark:bg-[#57c7a3] !h-[35px] dark:border  dark:text-[#fff] border-none`}
                 onClick={() => setActive(!active)}
               >
                 Thêm thành viên
@@ -185,14 +187,14 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 color: theme === "dark" ? "#fff" : "#000",
               },
               "& .MuiDataGrid-row ": {
-                color: theme === "dark" ? "#fff" : "#000",
+                color: theme === "dark" ? "#fff" : "#000", //text
                 borderBottom:
                   theme === "dark"
                     ? "1px solid #ffffff30!important"
                     : "1px solid #ccc!important",
               },
               "& .MuiTablePagination-root": {
-                color: theme === "dark" ? "#000" : "#fff",
+                color: theme === "dark" ? "#000" : "#fff", //rows per page
               },
               "& .MuiDataGrid-cell": {
                 borderBottom: "none",
@@ -206,10 +208,10 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 color: theme === "dark" ? "" : "#000",
               },
               "& .MuiDataGrid-virtualScroller": {
-                color: theme === "dark" ? "#1F2A40" : "#F2F0F0",
+                color: theme === "dark" ? "#1F2A40" : "#F2F0F0", //title header
               },
               "& .MuiDataGrid-footerContainer": {
-                backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
+                backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC", //color footer
                 borderTop: "none",
                 color: theme === "dark" ? "#fff" : "#000",
               },
@@ -217,8 +219,8 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 color:
                   theme === "dark" ? `#b7ebde !important` : `#000 !important `,
               },
-              "& .MuiDataGrid-toolbaarContainer .MuiButton-text": {
-                color: `#fff !important`,
+              "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+                color: `#ff0000 !important`,
               },
             }}
           >
@@ -237,7 +239,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
               aria-describedby="modal-modal-description"
             >
               <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
-                <h1 className={"styles.title  dark:text-white"}>
+                <h1 className={`${style.title} dark:text-white`}>
                   Thêm người dùng mới
                 </h1>
                 <div className="mt-4">
@@ -246,12 +248,12 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Nhập email"
-                    className="styles.input dark:text-white"
+                    className={`${style.input} dark:text-white`}
                   />
                   <select
                     name=""
                     id=""
-                    className="{style.input}  !mt-6 dark:text-white"
+                    className={`${style.input} !mt-6 dark:text-white`}
                   >
                     <option value="admin" className="dark:text-white">
                       Admin
@@ -260,7 +262,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                   </select>
                   <br />
                   <div
-                    className="styles.button  my-6 !h-[30px] flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3]"
+                    className={`${style.button}  my-6 !h-[30px] flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3]`}
                     onClick={handleSubmit}
                   >
                     Tạo
@@ -278,18 +280,18 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
               aria-describedby="modal-modal-description"
             >
               <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
-                <h1 className="styles.title dark:text-white">
+                <h1 className={`${style.title} dark:text-white text-sm`}>
                   Bạn có muốn xóa người dùng này không?
                 </h1>
                 <div className="flex w-full items-center justify-between mb-6 mt-4">
                   <div
-                    className="styles.button w-[120px] h-[30px] bg-[#57c7a3] flex justify-center items-center cursor-pointer rounded"
+                    className={`${style.button} w-[60px] h-[30px] bg-[#57c7a3] flex justify-center items-center cursor-pointer rounded`}
                     onClick={() => setOpen(false)}
                   >
                     Hủy bỏ
                   </div>
                   <div
-                    className="styles.button w-[120px] h-[30px] bg-[#d63f3f] flex justify-center items-center cursor-pointer rounded"
+                    className={`${style.button} w-[120px] h-[30px] bg-[#d63f3f] flex justify-center items-center cursor-pointer rounded ml-5`}
                     onClick={handleDelete}
                   >
                     Xóa

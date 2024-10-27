@@ -110,11 +110,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #fffffff0;
+  background: #c9c9c9f0;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0b87a0b0;
+  background: #e22e37b0;
 }
 
 ::-webkit-scrollbar-thumb:hover {

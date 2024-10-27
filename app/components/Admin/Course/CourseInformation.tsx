@@ -60,7 +60,7 @@ const CourseInformation: FC<Props> = ({
   }
 
   return (
-    <div className="w-[80%] m-auto mt-24">
+    <div className="w-[80%] m-auto mt-24 mb-10">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div>
           <label htmlFor="name" className={style.label}>
@@ -93,7 +93,7 @@ const CourseInformation: FC<Props> = ({
             onChange={(e) =>
               setCourseInfo({ ...courseInfo, description: e.target.value })
             }
-            className={`${style.input} h-24 resize-none`}
+            className={`${style.input} h-36 resize-none pt-4`}
           />
         </div>
 
