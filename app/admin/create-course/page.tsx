@@ -5,12 +5,12 @@ import Heading from "../../../app/utils/Heading";
 import CreateCourse from "../../components/Admin/Course/CreateCourse";
 import DashboardHeader from "@/app/components/Admin/DashboardHeader";
 
-type Props ={}
+type Props = {}
 const page = (props: Props) => {
   return (
     <div>
       <Heading
-        title="CodeGuru - Quản lý"
+        title="CodeGuru - Tạo khóa học"
         description="CodeGuru đây là nền tảng dành cho học sinh tham gia các khóa học, bên cạnh việc học còn được các thầy cô hỗ trợ"
         keywords="Programming, MERN, Redux, Machine Learning"
       />

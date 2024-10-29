@@ -214,7 +214,7 @@ const Sidebar = () => {
               className={`${course.font}`}
             />
             <Item
-              title="Những khóa học hiện tại"
+              title="Các khóa học hiện có"
               to="/admin/courses"
               icon={<OndemandVideoIcon />}
               selected={selected}

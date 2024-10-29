@@ -98,7 +98,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
     noRowsLabel: "Không có dữ liệu",
     noResultsOverlayLabel: "Không tìm thấy kết quả",
     errorOverlayDefaultLabel: "Có lỗi xảy ra",
-    footerRowSelected: (count: number) => `${count} học viên được chọn`,
+    footerRowSelected: (count: number) => `${count} người dùng được chọn`,
     footerTotalRows: "Tổng số học viên:",
     footerPage: "Trang",
     footerPaginationRowsPerPage: "Học viên mỗi trang:",
@@ -151,17 +151,14 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
         <Box
           m="20px"
           sx={{
-            width: "80%", maxWidth: "1200px", padding: "20px", borderRadius: 0.2, bgcolor: '#6da2f2',
-            '&:hover': {
-              bgcolor: '4f8fef',
-            },
+            width: "80%", maxWidth: "1200px", padding: "20px", borderRadius: 0.2, bgcolor: '#3a90a1',
           }
           }
         >
           {isTeam && (
             <div className="full justify-end">
               <div
-                className={`flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3] text-[16px] font-Poppins font-semibold !w-[190px] dark:bg-[#57c7a3] !h-[35px] dark:border  dark:text-[#fff] border-none`}
+                className={`flex flex-row justify-center items-center py-3 px-6 round-2 cursor-pointer bg-[#57c7a3] text-[16px] font-Poppins font-semibold !w-[190px] dark:bg-[#63ad59] !h-[35px] dark:border  dark:text-[#fff] border-none`}
                 onClick={() => setActive(!active)}
               >
                 Thêm thành viên
@@ -191,10 +188,10 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 borderBottom:
                   theme === "dark"
                     ? "1px solid #ffffff30!important"
-                    : "1px solid #ccc!important",
+                    : "1px solid #245bc9!important",
               },
               "& .MuiTablePagination-root": {
-                color: theme === "dark" ? "#000" : "#fff", //rows per page
+                color: theme === "dark" ? "#e8e8e8" : "#fff", //rows per page
               },
               "& .MuiDataGrid-cell": {
                 borderBottom: "none",
@@ -203,15 +200,15 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                 color: theme === "dark" ? "#fff" : "#000",
               },
               "& .MuiDataGrid-columnHeaders": {
-                backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC",
+                backgroundColor: theme === "dark" ? "#cfcaca" : "#A4A9FC",
                 borderBottom: "none",
                 color: theme === "dark" ? "" : "#000",
               },
               "& .MuiDataGrid-virtualScroller": {
-                color: theme === "dark" ? "#1F2A40" : "#F2F0F0", //title header
+                color: theme === "dark" ? "#1F2A40" : "#F2F0F0", // text title header
               },
               "& .MuiDataGrid-footerContainer": {
-                backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC", //color footer
+                backgroundColor: theme === "dark" ? "#3e4396" : "#A4A9FC", // color footer
                 borderTop: "none",
                 color: theme === "dark" ? "#fff" : "#000",
               },
@@ -240,7 +237,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
             >
               <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
                 <h1 className={`${style.title} dark:text-white`}>
-                  Thêm người dùng mới
+                  Thêm thành viên mới
                 </h1>
                 <div className="mt-4">
                   <input

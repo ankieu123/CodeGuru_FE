@@ -10,7 +10,7 @@ const Page: React.FC = () => {
   return (
     <AdminProtected>
       <Heading
-        title='CodeGuru'
+        title='CodeGuru - Quản lý đội ngũ'
         description='CodeGuru là trang web cung cấp các khóa học đa dạng'
         keywords='Programming, MERN, Redux, LMS'
       />

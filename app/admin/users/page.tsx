@@ -13,7 +13,7 @@ const page = (Props: Props) => {
     <div>
       <AdminProtected>
         <Heading
-          title='CodeGuru'
+          title='CodeGuru - Quản lý học viên'
           description='CodeGuru là trang web cung cấp các khóa học đa dạng'
           keywords='Programming, MERN, Redux, LMS'
         />
