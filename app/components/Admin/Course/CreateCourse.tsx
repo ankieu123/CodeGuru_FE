@@ -1,19 +1,21 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import CourseInformation from './CourseInformation';
-import CourseOptions from './CourseOptions';
-import CourseData from './CourseData';
-import CourseContent from './CourseContent';
-import CoursePreview from './CoursePreview';
-import { useCreateCourseMutation } from '@/redux/features/course/courseAPI';
 import toast from 'react-hot-toast';
 import { redirect } from 'next/navigation';
+
+import { useCreateCourseMutation } from '@/redux/features/course/courseAPI';
+
+import CourseContent from './CourseContent';
+import CourseData from './CourseData';
+import CourseInformation from './CourseInformation';
+import CourseOptions from './CourseOptions';
+import CoursePreview from './CoursePreview';
 
 
 type Props = {};
 
 const CreateCourse = (props: Props) => {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(3);
   const [createCourse, { isLoading, isSuccess, error }] = useCreateCourseMutation();
   useEffect(() => {
     if (isSuccess) {

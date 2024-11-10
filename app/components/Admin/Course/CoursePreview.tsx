@@ -1,8 +1,10 @@
-import React, { FC } from 'react'
-import CoursePlayer from "../../../utils/CoursePlayer"
+import React, { FC, useState } from 'react'
+import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5'
+
 import { style } from "../../../../app/styles/style"
 import Rating from "../../../../app/utils/Rating"
-import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5'
+import CoursePlayer from "../../../utils/CoursePlayer"
+import Loader from '../../Loader/Loader'
 
 type Props = {
     active: number,
@@ -17,6 +19,7 @@ const CoursePreview: FC<Props> = ({
     setActive,
     active
 }) => {
+    const [isLoading, setIsLoading] = useState(false);
     const discountPercent = ((courseData?.estimatedPrice - courseData?.price) / courseData?.estimatedPrice) * 100;
     const discountPercentPrice = discountPercent.toFixed(0);
 
@@ -31,10 +34,14 @@ const CoursePreview: FC<Props> = ({
         <div className='w-[90%] m-auto py-5 mb-5'>
             <div className='w-full relative'>
                 <div className='w-full mt-10'>
-                    <CoursePlayer
-                        videoUrl={courseData?.demoUrl}
-                        title={courseData?.title}
-                    />
+                    {isLoading ?
+                        <Loader />
+                        :
+                        <CoursePlayer
+                            videoUrl={courseData?.demoUrl}
+                            title={courseData?.title}
+                        />
+                    }
                 </div>
                 <div className='flex items-center dark:text-white text-black ml-14'>
                     <h1 className='pt-5 text-[25px]'>
@@ -69,20 +76,20 @@ const CoursePreview: FC<Props> = ({
             </div>
             <div className='w-full ml-14'>
                 <div className='w-full 800px:pr-5'>
-                    <h1 className='text-[25px] font-Poppins font-[600] text-white'>
+                    <h1 className='text-[25px] font-Poppins font-[600] dark:text-white text-black'>
                         {courseData?.name}
                     </h1>
                     <div className='flex items-center justify-between pt-3'>
                         <div className='flex items-center'>
                             <Rating rating={0} />
-                            <h5 className=' text-white'>0 đánh giá</h5>
+                            <h5 className=' dark:text-white text-black'>0 đánh giá</h5>
                         </div>
-                        <h5 className=' text-white'>0 học viên</h5>
+                        <h5 className=' dark:text-white text-black'>0 học viên</h5>
                     </div>
                     <br />
 
                     {/* benefits */}
-                    <h1 className='text-[25px] font-Poppins font-[600]  text-white'>
+                    <h1 className='text-[25px] font-Poppins font-[600]   dark:text-white text-black'>
                         Bạn sẽ học được gì từ khóa học này?
                     </h1>
                     <ul className="list-disc ml-6 dark:text-white text-black">

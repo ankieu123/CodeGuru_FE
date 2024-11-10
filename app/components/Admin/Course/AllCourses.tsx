@@ -37,7 +37,7 @@ const AllCourses = (props: Props) => {
         },
         {
             field: " ",
-            headerName: "Xóaaa",
+            headerName: "Xóa",
             flex: 0.2,
             renderCell: (params: any) => {
                 return (

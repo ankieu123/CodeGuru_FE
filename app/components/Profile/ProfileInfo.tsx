@@ -78,6 +78,7 @@ const ProfileInfo: FC<Props> = ({ avatar, user }) => {
                                 width={120}
                                 height={120}
                                 className="w-[120px] h-[120px] cursor-pointer border-[3px] border-[#37a39a] rounded-full"
+                                priority
                             />
                         )}
                     <input

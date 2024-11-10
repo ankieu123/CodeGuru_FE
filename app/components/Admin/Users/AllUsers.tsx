@@ -235,7 +235,7 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
               aria-labelledby="modal-modal-title"
               aria-describedby="modal-modal-description"
             >
-              <Box className="absolute top-[50%] left-[50%] -translate-x-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
+              <Box className="absolute top-[30%] left-[55%] -translate-x-1/2 w-[450px] bg-white dark:bg-slate-900 rounded-[8px] shadow p-4 outline-none">
                 <h1 className={`${style.title} dark:text-white`}>
                   Thêm thành viên mới
                 </h1>
@@ -250,19 +250,19 @@ const AllUsers: FC<Props> = ({ isTeam }) => {
                   <select
                     name=""
                     id=""
-                    className={`${style.input} !mt-6 dark:text-white`}
+                    className={`${style.input} !mt-6 dark:text-white `}
                   >
-                    <option value="admin" className="dark:text-white">
+                    <option value="admin" className="dark:text-black text-white">
                       Admin
                     </option>
-                    <option value="user">Học viên</option>
+                    <option value="user" className="dark:text-black text-white">Học viên</option>
                   </select>
                   <br />
                   <div
                     className={`${style.button}  my-6 !h-[30px] flex flex-row justify-center items-center py-3 px-6 !rounded-[10px] cursor-pointer bg-[#57c7a3]`}
                     onClick={handleSubmit}
                   >
-                    Tạo
+                    Thêm mới
                   </div>
                 </div>
               </Box>

@@ -13,7 +13,6 @@ type Props = {
   avatar: string | null;
   setActive: (active: number) => void;
   logOutHandler: any;
-  loginMethod: 'email' | 'google' | 'github';
 };
 
 const SideBarProfile: FC<Props> = ({
@@ -22,7 +21,6 @@ const SideBarProfile: FC<Props> = ({
   avatar,
   setActive,
   logOutHandler,
-  loginMethod,
 }) => {
   return (
     <div className="w-full">
@@ -44,19 +42,17 @@ const SideBarProfile: FC<Props> = ({
           Tài khoản của tôi
         </h5>
       </div>
-      {loginMethod === 'email' || loginMethod === 'github' && (
-        <div
-          className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 2 ? "dark:bg-slate-800 bg-white" : "bg-transparent"
-            }`}
-          onClick={() => setActive(2)}
-        >
-          <RiLockPasswordLine size={20} className="text-black dark:text-white" />
-          <h5 className="pl-2 800px:block hidden font-Poppins text-black dark:text-white">
-            Thay đổi mật khẩu
-          </h5>
-        </div>
-      )}
 
+      <div
+        className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 2 ? "dark:bg-slate-800 bg-white" : "bg-transparent"
+          }`}
+        onClick={() => setActive(2)}
+      >
+        <RiLockPasswordLine size={20} className="text-black dark:text-white" />
+        <h5 className="pl-2 800px:block hidden font-Poppins text-black dark:text-white">
+          Thay đổi mật khẩu
+        </h5>
+      </div>
 
       <div
         className={`w-full flex items-center px-3 py-4 cursor-pointer ${active === 3 ? "dark:bg-slate-800 bg-white" : "bg-transparent"
